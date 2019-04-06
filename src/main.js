@@ -16,16 +16,30 @@ import App from './App.vue'
 // import { Button } from 'mint-ui';
 // Vue.component(Button.name, Button);
 
+
+//导入vue-resource
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
 import { Header } from 'mint-ui';
 Vue.component(Header.name, Header);
+import { Swipe, SwipeItem } from 'mint-ui';
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 
 //导入mui样式
 import './lib/mui/css/mui.css'
 import './lib/mui/css/icons-extra.css'
 
+//配置路由
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+import router from './router.js'
+
 const vm = new Vue({
   el:'#app',
   render:function(createElement){
     return createElement(App)
-  }
+  },
+  router
 })
